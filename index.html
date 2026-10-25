@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Flexbox practice: aligned pricing cards and a centered login form." />
+    <title>Pricing Cards &amp; Login Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- ===================== PRICING CARDS ===================== -->
+    <section class="pricing" aria-labelledby="pricing-title">
+      <h1 id="pricing-title">Choose Your Plan</h1>
+      <p class="pricing__subtitle">Three cards in a flex row. The Pro card is taller and the cards are aligned to the center.</p>
+
+      <!-- Flex container (row): justify-content + align-items -->
+      <div class="pricing__cards">
+        <!-- Flex item; ALSO a flex container with flex-direction: column -->
+        <article class="plan">
+          <h2 class="plan__name">Basic</h2>
+          <p class="plan__price">$0<span>/month</span></p>
+          <ul class="plan__features">
+            <li>1 project</li>
+            <li>Community support</li>
+            <li>500 MB storage</li>
+          </ul>
+          <a href="#" class="plan__button">Start free</a>
+        </article>
+
+        <article class="plan plan--featured">
+          <span class="plan__tag">Most popular</span>
+          <h2 class="plan__name">Pro</h2>
+          <p class="plan__price">$12<span>/month</span></p>
+          <ul class="plan__features">
+            <li>10 projects</li>
+            <li>Email support</li>
+            <li>10 GB storage</li>
+            <li>Custom domain</li>
+            <li>Analytics dashboard</li>
+          </ul>
+          <a href="#" class="plan__button">Choose Pro</a>
+        </article>
+
+        <article class="plan">
+          <h2 class="plan__name">Premium</h2>
+          <p class="plan__price">$29<span>/month</span></p>
+          <ul class="plan__features">
+            <li>Unlimited projects</li>
+            <li>Priority support</li>
+            <li>100 GB storage</li>
+            <li>Custom domain</li>
+          </ul>
+          <a href="#" class="plan__button">Go Premium</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== flex-direction DEMO ===================== -->
+    <section class="direction-demo" aria-labelledby="direction-title">
+      <h2 id="direction-title">flex-direction in practice</h2>
+      <div class="direction-demo__grid">
+        <div>
+          <p><code>row</code> (default)</p>
+          <div class="demo-flex demo-flex--row"><span>1</span><span>2</span><span>3</span></div>
+        </div>
+        <div>
+          <p><code>row-reverse</code></p>
+          <div class="demo-flex demo-flex--row-reverse"><span>1</span><span>2</span><span>3</span></div>
+        </div>
+        <div>
+          <p><code>column</code> (used inside every card)</p>
+          <div class="demo-flex demo-flex--column"><span>1</span><span>2</span><span>3</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CENTERED LOGIN FORM ===================== -->
+    <!-- Flex container: full viewport height, centers its child both ways -->
+    <section class="login-screen" aria-labelledby="login-title">
+      <form class="login-form" action="#" method="post">
+        <h2 id="login-title">Log in</h2>
+
+        <div class="login-form__field">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="login-form__field">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" placeholder="Your password" required />
+        </div>
+
+        <div class="login-form__options">
+          <label class="login-form__remember">
+            <input type="checkbox" name="remember" /> Remember me
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="login-form__button">Log in</button>
+      </form>
+    </section>
+  </body>
+</html>

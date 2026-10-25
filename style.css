@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1f2937;
+  background-color: #f1f5f9;
+  line-height: 1.5;
+}
+
+/* ===================== PRICING ===================== */
+.pricing {
+  padding: 48px 16px;
+  text-align: center;
+}
+
+.pricing__subtitle {
+  color: #64748b;
+}
+
+/* Parent container: FLEX ROW */
+.pricing__cards {
+  display: flex;                  /* cards in a row */
+  flex-direction: row;            /* default, written for clarity */
+  justify-content: center;        /* main axis (horizontal): center the group */
+  align-items: center;            /* cross axis (vertical): center, so the taller Pro card sticks out on both sides */
+  flex-wrap: wrap;                /* cards wrap on small screens */
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Each card is a flex item AND a flex container (column) */
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;         /* stack: name, price, features, button */
+  align-items: center;            /* center each child horizontally */
+  width: 280px;
+  padding: 28px 24px;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.plan--featured {
+  padding: 44px 24px;             /* taller than the others */
+  border: 3px solid #2563eb;
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.25);
+}
+
+.plan__tag {
+  position: absolute;
+  top: -14px;
+  padding: 4px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #2563eb;
+  border-radius: 999px;
+}
+
+.plan__name {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.plan__price {
+  margin: 8px 0 16px;
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.plan__price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #64748b;
+}
+
+.plan__features {
+  flex-grow: 1;                   /* takes the free space, so buttons sit at the bottom of equal-height cards */
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.plan__features li {
+  padding: 6px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.plan__button {
+  padding: 10px 28px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #0f172a;
+  border-radius: 999px;
+}
+
+.plan--featured .plan__button {
+  background-color: #2563eb;
+}
+
+/* ===================== flex-direction demo ===================== */
+.direction-demo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.direction-demo__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.direction-demo__grid > div {
+  flex: 1 1 200px;
+}
+
+.demo-flex {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+}
+
+.demo-flex span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #2563eb;
+  border-radius: 8px;
+}
+
+.demo-flex--row         { flex-direction: row; }
+.demo-flex--row-reverse { flex-direction: row-reverse; }
+.demo-flex--column      { flex-direction: column; align-items: flex-start; }
+
+/* ===================== CENTERED LOGIN FORM ===================== */
+.login-screen {
+  display: flex;
+  justify-content: center;        /* horizontal centering */
+  align-items: center;            /* vertical centering */
+  min-height: 100vh;              /* the container is as tall as the screen */
+  padding: 16px;
+  background-color: #0f172a;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;         /* fields stacked vertically */
+  gap: 16px;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.login-form h2 {
+  margin: 0;
+  text-align: center;
+}
+
+.login-form__field {
+  display: flex;
+  flex-direction: column;         /* label above input */
+  gap: 6px;
+}
+
+.login-form__field label {
+  font-weight: 600;
+}
+
+.login-form__field input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #94a3b8;
+  border-radius: 8px;
+}
+
+.login-form__field input:focus {
+  outline: 2px solid #2563eb;
+  border-color: #2563eb;
+}
+
+.login-form__options {
+  display: flex;
+  justify-content: space-between; /* "Remember me" left, link right */
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.login-form__button {
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.login-form__button:hover {
+  background-color: #1d4ed8;
+}
